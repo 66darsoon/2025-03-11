@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <style type="text/tailwindcss">
+    .nav-item {
+      @apply py-2 px-3 flex items-center;
+    }
+    .progress-circle {
+      @apply border rounded-full w-10 h-10;
+    }
+    .progress-line {
+      @apply border rounded-lg w-[40px] h-2 xl:w-[180px] md:w-[120px];
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- navbar-start -->
+  <section id="navbar" class="flex justify-center">
+    <nav class="relative h-[54px] w-[90%] flex items-center">
+      <div class="py-3 px-2 text-[24px]">
+        Navber
+      </div>
+      <div class="ml-auto align-bottom hidden md:flex">
+        <ul class="flex">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img class="h-5" src="./svg/shoppingCar.svg" alt="">
+              <!-- <span class="">購物車</span> -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img class="h-5" src="./svg/user.svg" alt="">
+              <!-- <span class="user-text">使用者</span> -->
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- dropdown-menu-start(moblie) -->
+      <button id="dropdown-menu-btn"
+        class="w-10 h-10 py-2 px-2 ml-auto min-w-10 min-h-10 rounded-md block md:hidden hover:bg-gray-100 active:border border-black">
+        <img src="./svg/menuBtn.svg" alt="">
+      </button>
+      <div id="dropdown-menu" class="z-10 absolute right-0 top-[110%] w-full hidden border border-black">
+        <ul class="flex flex-col items-center w-full bg-gray-100">
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link flex" href="#">
+              <img class="h-5 mr-1" src="./svg/shoppingCar.svg" alt="">
+              <span>購物車</span>
+            </a>
+          </li>
+          <li class="w-full cursor-pointer nav-item hover:border hover:border-b-2 flex justify-center">
+            <a class="nav-link flex" href="#">
+              <img class="h-5 mr-1" src="./svg/user.svg" alt="">
+              <span>使用者</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- dropdown-menu-end(moblie) -->
+    </nav>
+  </section>
+  <!-- navbar-end -->
+
+  <!-- main-start -->
+  <section id="main">
+    <div class="flex justify-center bg-gray-300 sm:p-[50px]">
+      <div class="w-full px-12 py-10 rounded-none bg-white lg:w-[90%] sm:shadow-2xl sm:rounded-xl">
+        <h1 class="text-2xl">購物車</h1>
+        <div class="py-10 mb-7">
+          <ul class="flex justify-center">
+            <li class="flex items-center">
+              <div
+                class="relative progress-circle border-blue-700 bg-blue-700 flex justify-center items-center text-white before:absolute before:content-['確認　購物車'] before:text-black before:text-center before:w-[50px] before:top-[130%] before:left-[-20%]">
+                1
+              </div>
+              <div class="progress-line border-blue-700 bg-blue-700"></div>
+            </li>
+            <li class="flex items-center">
+              <div
+                class="relative progress-circle border-blue-700 bg-blue-700 flex justify-center items-center text-white before:absolute before:content-['付款與　運送方式'] before:text-black before:text-center before:w-[70px] before:top-[130%] before:left-[-45%]">
+                2
+              </div>
+              <div class="progress-line border-blue-700 bg-blue-700"></div>
+            </li>
+            <li class="flex items-center">
+              <div
+                class="relative progress-circle border-blue-700 bg-blue-700 flex justify-center items-center text-white before:absolute before:content-['填寫資料'] before:text-black before:w-[120px] before:top-[130%] before:left-[-35%]">
+                3
+              </div>
+              <div class="progress-line border-blue-700 bg-blue-700"></div>
+            </li>
+            <li class="flex items-center">
+              <div
+                class="relative progress-circle border-blue-700 bg-blue-700 flex justify-center items-center text-white before:absolute before:content-['完成訂購'] before:text-black before:w-[120px] before:top-[130%] before:left-[-35%]">
+                4
+              </div>
+            </li>
+          </ul>
+        </div>
+        <hr class="mb-5">
+        <div>
+          <h1 class="text-2xl">訂單明細</h1>
+          <ul class="p-2">
+            <li class="flex flex-col items-center md:flex-row sm:items-start mb-6 border-b-2 pb-4">
+              <div class="flex mb-2">
+                <img class="mr-2 w-10" src="./svg/user.svg" alt="">
+                <div class="">
+                  <div>Subheading</div>
+                  Content for list item
+                </div>
+              </div>
+              <div class="flex justify-center items-center w-[60%] h-12 md:w-[40%] sm:w-[50%] sm:ml-auto">
+                <div class="flex items-center justify-center w-full h-full min-w-24 sm:justify-end">
+                  <span class="mr-10">X1</span>
+                  <span id="goods-price">$10.50</span>
+                </div>
+              </div>
+            </li>
+            <li class="flex flex-col items-center md:flex-row sm:items-start mb-6 pb-4">
+              <div class="flex mb-2">
+                <img class="mr-2 w-10" src="./svg/user.svg" alt="">
+                <div class="">
+                  <div>Subheading</div>
+                  Content for list item
+                </div>
+              </div>
+              <div class="flex justify-center items-center w-[60%] h-12 md:w-[40%] sm:w-[50%] sm:ml-auto">
+                <div class="flex items-center justify-center w-full h-full min-w-24 sm:justify-end">
+                  <span class="mr-10">X1</span>
+                  <span id="goods-price">$10.50</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 寄送資料 -->
+        <div id="send-info">
+          <h1 class="text-2xl">寄送資料</h1>
+          <div class="mb-5 border-b-2 my-5">
+            <ul>
+              <li class="my-5 flex">
+                <span class="w-[10%] max-sm:w-[20%]">姓名:</span>
+                <span>王小明</span>
+              </li>
+              <li class="my-5 flex">
+                <span class="w-[10%] max-sm:w-[20%]">電話:</span>
+                <span>0912345678</span>
+              </li>
+              <li class="my-5 flex">
+                <span class="w-[10%] max-sm:w-[20%]">Email:</span>
+                <span>abc123@gmail.com</span>
+              </li>
+              <li class="my-5 flex">
+                <span class="w-[10%] max-sm:w-[20%]">地址:</span>
+                <span>409 台中市小鎮村英雄路1號</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="p-2 my-3">
+              <li class="flex flex-col md:flex-row sm:items-end mb-6 border-b-2 pb-4">
+                <ul class="w-full flex flex-col items-center sm:items-end">
+                  <li class="w-full sm:w-[30%]">
+                    <ul class="">
+                      <li class="flex justify-between">
+                        數量:
+                        <span>0</span>
+                      </li>
+                      <li class="flex justify-between">
+                        小計:
+                        <span>$0</span>
+                      </li>
+                      <li class="flex justify-between">
+                        運費:
+                        <span>$0</span>
+                      </li>
+                      <li class="flex justify-between">
+                        總計:
+                        <span>$0</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <hr class="my-5 w-full">
+                  <li class="w-full flex justify-center">
+                    <button type="button"
+                      class="w-40 h-7 flex justify-center items-center rounded-md bg-blue-500 active:bg-blue-900 text-white m-2 sm:ml-auto"
+                      id="submit-btn">返回首頁</button>
+                  </li>
+                </ul>
+              </li>
+  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main-end -->
+
+  <!-- companyInfo-start -->
+  <section id="company-info">
+    <div class="flex flex-col content-between md:flex-row px-[30px]">
+      <div class="flex-auto p-4">
+        <div class="flex justify-center md:justify-start">LOGO</div>
+        <div class="p-1 text-center md:text-left">Air plant banjo lyft occupy retro adaptogen indego</div>
+      </div>
+      <div class="flex-1 p-4 ">
+        <ul class="flex-col md:justify-center">
+          <h2 class="text-gray-400 pb-2 text-center md:text-left"> CATEGORIES</h2>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">First Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Second Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Third Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Fourth Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1 p-4 ">
+        <ul class="flex-col md:justify-center">
+          <h2 class="text-gray-400 pb-2 text-center md:text-left"> CATEGORIES</h2>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">First Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Second Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Third Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Fourth Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1 p-4 ">
+        <ul class="flex-col md:justify-center">
+          <h2 class="text-gray-400 pb-2 text-center md:text-left"> CATEGORIES</h2>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">First Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Second Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Third Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Fourth Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1 p-4 ">
+        <ul class="flex-col md:justify-center">
+          <h2 class="text-gray-400 pb-2 text-center md:text-left"> CATEGORIES</h2>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">First Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Second Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Third Link</a>
+          </li>
+          <li class="flex justify-center md:justify-start text-[16px]">
+            <a href="#">Fourth Link</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </section>
+  <!-- companyInfo-end -->
+
+  <!-- footer-start -->
+  <section id="footer">
+    <footer class="flex justify-center bg-gray-300">
+      <div class="w-[90%] p-4 flex justify-center md:justify-start">
+        <span>© 2024 Company, Inc</span>
+      </div>
+    </footer>
+  </section>
+  <!-- footer-end -->
+
+  <script src="./shopping.js"></script>
+</body>
+
+</html>
