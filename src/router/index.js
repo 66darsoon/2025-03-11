@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'newpage',
       component: () => import('../views/WebPageView.vue'),
     },
+    {
+      path: '/dinner',
+      name: 'dinner',
+      component: () => import('../views/DinnerView.vue'),
+    },
 
   ],
 })

@@ -58,7 +58,7 @@ export default {
     <div class="container">
       <div>
         <div class="top-block">
-          <p>菜單選項</p>
+          <p class="text-3xl">菜單選項</p>
           <label>
             <select v-model="checkTable">
               <option  value="" hidden>請選擇桌號</option>

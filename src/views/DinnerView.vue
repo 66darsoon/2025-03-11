@@ -1,4 +1,5 @@
 <script>
+import bento from '@/assets/便當菜單.jpg';
 export default {
   data() {
         return {
@@ -19,7 +20,8 @@ export default {
           ],
           totalOrders: 0,
           totalPrice: 0,
-          isOrderSubmitted: false
+          isOrderSubmitted: false,
+          bento: bento,
         };
       },
       methods: {
@@ -60,39 +62,41 @@ export default {
 </script>
 
 <template>
-      <figure class="img-block">
-      <img src="@/assets/便當菜單.jpg" alt="便當菜單">
-    </figure> 
-    <div class="container">
-      <fieldset class="card" v-for="(order, index) in orders" :key="index">
-        <legend>{{ showName(order.selected) }}</legend>
+  <div>
+    <figure class="img-block">
+    <img class="img" :src="bento" alt="便當菜單">
+  </figure> 
+  <div class="bento-container">
+    <fieldset class="card" v-for="(order, index) in orders" :key="index">
+      <legend>{{ showName(order.selected) }}</legend>
 
-        <div>
-          <!-- 顯示目前菜單 -->
-          <div v-for="item in menu" :key="item.foodName">
-            <label>
-              <input v-model="order.picked" type="radio" :value="item.foodName" :disabled="isOrderSubmitted">
-              {{ item.foodName }}
-            </label>
-          </div>
-          <hr>
-          <p class="choose">{{ order.picked }}</p>
-        </div>
-      </fieldset>
-    </div>
-    <hr>
-    <aside class="statistics-block">
       <div>
-        <button type="button" class="btn" @click="checkPrice" :disabled="isOrderSubmitted">送出訂單</button>
-        <button type="button" class="btn" @click="resetOrder" :disabled="!isOrderSubmitted">重訂便當</button>
+        <!-- 顯示目前菜單 -->
+        <div v-for="item in menu" :key="item.foodName">
+          <label>
+            <input v-model="order.picked" type="radio" :value="item.foodName" :disabled="isOrderSubmitted">
+            {{ item.foodName }}
+          </label>
+        </div>
+        <hr>
+        <p class="choose">{{ order.picked }}</p>
       </div>
-      <p>總共訂 {{ totalOrders }} 個便當</p>
-      <p>
-        共
-        <b class="total">{{ totalPrice }} </b>
-        元
-      </p>
-    </aside>
+    </fieldset>
+  </div>
+  <hr>
+  <aside class="statistics-block">
+    <div>
+      <button type="button" class="btn" @click="checkPrice" :disabled="isOrderSubmitted">送出訂單</button>
+      <button type="button" class="btn" @click="resetOrder" :disabled="!isOrderSubmitted">重訂便當</button>
+    </div>
+    <p>總共訂 {{ totalOrders }} 個便當</p>
+    <p>
+      共
+      <b class="total">{{ totalPrice }} </b>
+      元
+    </p>
+  </aside>
+  </div>
 </template>
 
 <style>
@@ -108,15 +112,17 @@ export default {
   background-color: rgb(195, 31, 31);
 }
 
-img {
+.img {
   height: 50dvh;
+  width: auto;
 }
 
-.container {
+.bento-container {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding: 30px;
+  background-color: #FFF;
 }
 
 .card {

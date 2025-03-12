@@ -17,14 +17,25 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header> -->
+  <header>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/newpage">NewPage</RouterLink>
+    <RouterLink to="/dinner">Dinner</RouterLink>
+  </header>
 
   <RouterView />
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ background-color: antiquewhite;
 }
 
 .logo {
